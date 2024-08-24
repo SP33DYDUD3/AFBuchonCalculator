@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta name="viewport" content="width=device-width, 
+        initial-scale=1.0, maximum-scale=1.0" charset="utf-8">
+        <link rel = "stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra
+        +Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;
+        0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=
+        swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" 
+        rel="stylesheet">
+        <title>Arely's Flowers Buchon Calculator</title>
+        <script type = "text/javascript" src = "index.js" defer></script>
+    </head>
+
+    <body>
+        <main>
+        <div class = "title">
+            <img src = "AFLogo.png">
+            <h1>BUCHON CALCULATOR</h1>
+        </div>
+        <p id = "subtitle">Check to see how much your ramo buchon costs </p>
+        <div class = "crop">
+            <img src = "Img.png" id = "align">
+        </div>
+        </main>
+
+        <div class="total">
+            <p>$<input id="answer" type="text" name="display" placeholder="000" readonly></p>
+            <p id="estimatedTotal">ESTIMATED TOTAL</p>
+        </div>
+
+        <form> 
+            <div class="form">
+                <h2>Natural<br>Roses:</h2>
+                <div class="input-group">
+                    <p>Red</p>
+                    <input type="number" id="naturalQuantityRed" min="0" max="200" 
+                    placeholder="0"  maxlength="3">
+                </div>
+                <div class="input-group">
+                    <p>White</p>
+                    <input type="number" id="naturalQuantityWhite" min="0" max="200" 
+                    placeholder="0"  maxlength="3">
+                </div>
+                <div class="input-group">
+                    <p>Hot Pink</p>
+                    <input type="number" id="naturalQuantityPink" min="0" max="200" 
+                    placeholder="0"  maxlength="3">
+                </div>
+                <div class="input-group">
+                    <p>Yellow</p>
+                    <input type="number" id="naturalQuantityYellow" min="0" max="200" 
+                    placeholder="0"  maxlength="3">
+                </div>
+                <div class="input-group">
+                    <p>Orange</p>
+                    <input type="number" id="naturalQuantityOrange" min="0" max="200" 
+                    placeholder="0"  maxlength="3">
+                </div>
+            </div>
+            
+            <div class="form2">
+                <h2>Painted<br>Roses:</h2>
+                <div class="input-group">
+                    <p>Blue</p>
+                    <input type="number" id="blueQuantity" min="0" max="200" 
+                    placeholder="0"  maxlength="3">
+                </div>
+                <div class="input-group">
+                    <p>Glitter</p>
+                    <input type="number" id="paintedQuantityGlitter" min="0" max="200" 
+                    maxlength="3" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <p>Blue+Pink</p>
+                    <input type="number" id="paintedQuantityBluePink" min="0" max="200" 
+                    maxlength="3" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <p>Purple</p>
+                    <input type="number" id="paintedQuantityPurple" min="0" max="200" 
+                    maxlength="3" placeholder="0">
+                </div>
+            </div>
+            
+            <div class="form2">
+                <h2>Decoration<br><p id = "sub-text">By Bunch<br>Decoración:</p></h2>
+                <div class="input-group">
+                    <p>Nuve</p>
+                    <input type="number" id="nuveQuantity" min="0" max="10" 
+                    maxlength="2" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <p>Margarita</p>
+                    <input type="number" id="margaritaQuantity" min="0" max="10" 
+                    maxlength="2" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <p>Sunflower</p>
+                    <input type="number" id="sunflowerQuantity" min="0" max="10"
+                    maxlength="2" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <p>Astromelia</p>
+                    <input type="number" id="astromeliaQuantity" min="0" max="10"
+                    maxlength="2" placeholder="0">
+                </div>
+            </div>
+            
+            <div class="form3">
+                <h2 id="center">Pins:</h2>
+                <div class="input-group">
+                    <p>All</p>
+                    <input type="number" id="allPinsQuantity" min="0" max="1" placeholder="0" 
+                    onchange="calculateTotal()" maxlength="1">
+                </div>
+                <div class="input-group">
+                    <p>Half</p>
+                    <input type="number" id="halfPinsQuantity" min="0" max="1" placeholder="0" 
+                    onchange="calculateTotal()"  maxlength="1">
+                </div>
+                <div class="input-group">
+                    <p>Other</p>
+                    <input type="number" id="otherPinsQuantity" min="0" max="200" placeholder="0" 
+                    onchange="calculateTotal()"  maxlength="1">
+                </div>
+            </div>
+
+            <div class="form3">
+                <h2>Butterflies<br><p id = "sub-text">Mariposas:</p></h2>
+                <div class="input-group">
+                    <p>Small</p>
+                    <input type="number" id="smallButterflyQuantity" min="0" max="50" 
+                    placeholder="0"  maxlength="2">
+                </div>
+                <div class="input-group">
+                    <p>Medium</p>
+                    <input type="number" id="mediumButterflyQuantity" min="0" max="50" 
+                    maxlength="2" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <p>Large</p>
+                    <input type="number" id="largeButterflyQuantity" min="0" max="50"
+                    maxlength="2" placeholder="0">
+                </div>
+            </div>
+
+            <div class="form3">
+                <h2>Crowns<br><p id = "sub-text">Coronas:</p></h2>
+                <div class="input-group">
+                    <p>Small</p>
+                    <input type="number" id="smallCrownQuantity" min="0" max="10" 
+                    maxlength="2" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <p>Medium</p>
+                    <input type="number" id="mediumCrownQuantity" min="0" max="10"
+                    maxlength="2" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <p>Large</p>
+                    <input type="number" id="largeCrownQuantity" min="0" max="10"
+                    maxlength="2" placeholder="0">
+                </div>
+            </div>
+
+            <div class="form4">
+                <h2>Ribbon<br><p id = "sub-text">Liston:</p></h2>
+                <div class="input-group">
+                    <input type="number" id="ribbonQuantity" min="0" max="1" 
+                    maxlength="1" placeholder="0">
+                </div>
+                <div class="form4 form4-2">
+                    <h2>Paper<br><p id = "sub-text">Papel:</p></h2>
+                    <div class="input-group">
+                        <input type="number" id="paperQuantity" min="0" max="20" 
+                        maxlength="2" placeholder="0">
+                    </div>
+                </div>
+                <div class="form4 form4-3">
+                    <h2>More<br><p id = "sub-text">Mas:</p></h2>
+                    <div class="input-group">
+                        <input type="number" id="moreQuantity" min="0" max="100" 
+                        maxlength="3" placeholder="0">
+                    </div>
+                </div>
+            </div>
+    </form>            
+    <button class="calButton" onclick="calculateTotal()">CALCULATE MY BUCHON</button>
+
+    <div class="smallScreen">
+        <img src = "AFLogo.png">
+        <h1>Thanks for visiting our Page</h1>
+        <p>This is a work in progress</p>
+        <p>Please use a desktop device to view this page properly.</p>
+    </div>
+
+    <div id="rotateScreen" class="rotate-screen">
+        <p>Please rotate your device</p>
+        <img src="AFLogo.png" alt="Rotate Icon">
+    </div>
+
+    <div class = "copyright">
+        <p>** Please note that the price you get listed here reflect standard, non-holiday rates. 
+            During peak periods, such as holidays, the prices of flowers may increase due to higher 
+            demand and limited supply. We encourage you to contact us directly for accurate pricing 
+            during these times. **
+        </p>
+    </div>
+    <footer>
+        <p id = "text1"> Developed by <a target = "_blank" href = "https://www.instagram.com/____.santi.____/">
+            @ ____.santi.___</a></p>
+        <p> &#169; 2023 by Arely's Flowers Plants and Gifts</p>
+    </footer>
+    </body>
+</html>

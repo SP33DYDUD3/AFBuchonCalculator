@@ -1,0 +1,455 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ededed;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+}
+.title {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+.title img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+.title h1 {
+    font-size: 60px;
+    margin-top: -18px;
+    margin-left: -3px;
+    color: #AE2C21;
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    font-weight: 500;
+}
+#subtitle {
+    margin-top: -28px;
+    margin-left: 140px;
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+}
+.crop {
+    width: 475px;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#align {
+    height: 100%;
+    transform: translateX(-291px);
+}
+.total p{
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 70px;
+    right: 69px;
+    font-size: 150px;
+    background-color: transparent; 
+    font-family: "Alatsi", sans-serif;
+    text-align: center;
+}
+#answer{
+    background-color: transparent;
+    color: white;
+    height: 150px;
+    max-width: 3ch;
+    font-size: 150px;
+    border: none;
+    font-family: "Alatsi", sans-serif;
+    text-align: center;
+    outline: none;
+}
+#answer::placeholder{
+    color: white;
+}
+#estimatedTotal{
+    background-color: transparent;
+    color: white;
+    font-size: 36px;
+    position: absolute;
+    top: 230px;
+    right: 74px;
+    text-align: center;
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    font-weight: 500;
+}
+/*----------------------------------------------------------------*/
+.form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    max-width: 800px;
+    margin-bottom: 15px;
+}
+h2, .input-group p {
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    font-size: 20px;
+}
+h2 {
+    color: #AE2C21;
+    margin-left: 75px;
+    text-align: left;
+    min-width: 120px;
+}
+#sub-text{
+    font-weight: 100;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+    margin-left: 10px;
+}
+.input-group p {
+    margin-bottom: 5px;
+    font-weight: 100;
+}
+input[type="number"]{
+    width: 60px;
+    height: 23px;
+    padding: 10px;
+    border: 1px solid #D9D9D9;
+    border-radius: 23px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    padding-left: 20px;
+}
+.form2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    max-width: 727px;
+    margin-bottom: 15px;
+}
+.form3 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    max-width: 604px;
+    margin-bottom: 15px;
+}
+.form4 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    max-width: 345px;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+.form4-2{
+    margin-left: -47px;
+}
+.form4-2 input{
+    margin-left: 3px;
+}
+.form4-3{
+    margin-left: -47px;
+}
+.form4-3 input{
+    margin-left: -5px;
+}
+#center{
+    margin-bottom: 12px;
+}
+.calButton{
+    width: 500px;
+    height: 50px;
+    background-color: #ae2d21dd;
+    color: white;
+    border-radius: 10px;
+    font-size: 22px;
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    font-weight: 500;
+    margin-left: 225px;
+    margin-top: 22px;
+    border: none;
+    cursor: pointer; 
+    text-align: center;
+}
+/*----------------------------------------------------------------*/
+.smallScreen{
+    display: none;
+}
+/*----------------------------------------------------------------*/
+.copyright{
+    position: absolute;
+    top: 83%;
+    right: 34px;
+    max-width: 400px;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+}
+.copyright p{
+    margin-top: 10px;
+    background-color: transparent;
+    font-size: 12px;
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    font-weight: 100;
+}
+
+/*----------------------------------------------------------------*/
+footer{
+    position: absolute;
+    top: 93%;
+    right: 125px;
+    max-width: 550px;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+}
+footer p{
+    top: 93%;
+    background-color: transparent;
+    font-size: 10px;
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    font-weight: 100;
+}
+footer a{
+    background-color: transparent;
+    color: white;
+}
+/*----------------------------------------------------------------*/
+/*----------PHONE--------------------------------*/
+
+@media (max-width: 1024px) {
+    main, .total, form, .calButton, .copyright, footer {
+        display: none; 
+    }
+    .smallScreen{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 85vh;
+        text-align: center;
+    }
+    .smallScreen p{
+        margin-top: 20px;
+    }
+    .smallScreen img{
+        width: 150px;
+        height: 150px;
+    }
+}
+/*----------------TABLET---------------------------------------*/
+@media (min-width: 768px) and (max-width: 1180px) {
+    main > :not(.crop) {
+        margin-top: 5px;
+    }
+    form{
+        margin-top: 10px;
+    }
+    .title {
+        margin-left: 25px;
+    }
+    .title img {
+        width: 90px;
+        height: 90px;
+        margin-right: 5px;
+    }
+    .title h1 {
+        font-size: 55px;
+        color: #AE2C21;
+    }
+    #subtitle {
+        margin-top: -28px;
+        margin-left: 120px;
+    }
+    .crop {
+        width: 400px;
+    }
+    #align {
+        transform: translateX(-330px);
+    }
+    .total p{
+        top: 50px;
+        right: 35px;
+    }
+    #estimatedTotal{
+        top: 210px;
+        right: 35px;
+    }
+    /*----------------------------------------------------------------*/
+    .form {
+        margin-bottom: 13px;
+        max-width: 200px;
+    }
+    h2 {
+        margin-left: 60px;
+    }
+    .input-group {
+        min-width: 100px;
+        margin: 0 7px;
+    }
+    .form2 {
+        max-width: 500px;
+        margin-bottom: 13px;
+    }
+    .form3 {
+        max-width: 500px;
+        margin-bottom: 13px;
+    }
+    .form4 {
+        margin-right: 13px;
+    }
+    .form4-2{
+        margin-left: -31px;
+    }
+    .form4-2 input{
+        margin-left: -69px;
+    }
+    .form4-3{
+        margin-left: -70px;
+    }
+    .form4-3 input{
+        margin-left: -80px;
+    }
+    .calButton{
+        width: 400px;
+        margin-left: 200px;
+    }    
+    /*----------------------------------------------------------------*/
+    .copyright{
+        right: 20px;
+        max-width: 350px;
+    }
+    /*----------------------------------------------------------------*/
+    footer{
+        top: 93%;
+        right: 100px;
+        max-width: 550px;
+        color: white;
+        background-color: transparent;
+        text-align: center;
+    }
+    footer p{
+        top: 93%;
+        background-color: transparent;
+        font-size: 10px;
+        font-family: "Fira Sans Extra Condensed", sans-serif;
+        font-weight: 100;
+    }
+    footer a{
+        background-color: transparent;
+        color: white;
+    }
+}
+/*----------------Ipad Pro---------------------------------------*/
+@media (min-width: 1181px) and (max-width: 1366px) {
+    main > :not(.crop) {
+        margin-top: 55px;
+    }
+    form{
+        margin-top: 30px;
+    }
+    .form {
+        margin-bottom: 20px;
+        max-width: 200px;
+    }
+    .input-group {
+        min-width: 100px;
+        margin: 0 15px;
+    }
+    .form2 {
+        max-width: 500px;
+        margin-bottom: 20px;
+    }
+    .form3 {
+        max-width: 500px;
+        margin-bottom: 20px;
+    }
+    .form4 {
+        margin-right: 13px;
+    }
+    .form4-2{
+        margin-left: -36px;
+    }
+    .form4-2 input{
+        margin-left: -53px;
+    }
+    .form4-3{
+        margin-left: -70px;
+    }
+    .form4-3 input{
+        margin-left: -80px;
+    }
+    .calButton{
+        width: 450px;
+        margin-left: 200px;
+        margin-top: 50px;
+    }    
+}
+#rotateScreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+}
+/*----------------------------------------------------------------*/
+/* Animation for the rotate message */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.rotate-screen p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.rotate-screen img {
+    width: 50px;
+    height: 50px;
+    animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(-25deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}
+.rotate-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 1000;
+}
+.rotate-screen p {
+    margin: 0;
+}
