@@ -186,7 +186,7 @@ input[type="number"]{
 /*----------------------------------------------------------------*/
 .copyright{
     position: absolute;
-    top: 83%;
+    top: 80%;
     right: 34px;
     max-width: 400px;
     color: white;
@@ -196,7 +196,7 @@ input[type="number"]{
 .copyright p{
     margin-top: 10px;
     background-color: transparent;
-    font-size: 12px;
+    font-size: 14px;
     font-family: "Fira Sans Extra Condensed", sans-serif;
     font-weight: 100;
 }
