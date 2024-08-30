@@ -1,22 +1,23 @@
-const naturalPrice = 2.44;
-const bluePrice = 3.12;
-const paintedPrice = 3.64;
-const nuvePrice = 15;
-const margaritaPrice = 8;
-const sunflowerPrice = 15;
-const astromeliaPrice = 15;
-const smallButterflyPrice = 1;
-const mediumButterflyPrice = 2;
-const largeButterflyPrice = 3;
-const smallCrownPrice = 5;
-const mediumCrownPrice = 8;
-const largeCrownPrice = 10;
-const ribbonPrice = 5; 
-const paperPrice = 3; 
-const morePrice = 1;   
-const priceZ = .25;
-const pinPrice = .50;
-
+const priceM = 2.44; //natural Price
+const priceL = 3.12; //blue Price
+const priceJ = 3.64; //painted Price
+const priceN = 2.10; //nuve Price
+const priceR = 2.21; //margarita/pompom Price
+const priceS = 2.60; //sunflower Price
+const priceA = 1.43; //astromelia Price
+const priceQ = 1; //small Butterfly Price
+const priceW = 2; //medium BUTTERFLY Price
+const priceV = 3; //large BUTTERFLY Price
+const priceP = 5; //small Crown Price
+const priceG = 8;  //medium Crown Price
+const priceD = 10;  //large Crown Price
+const priceI = 5; //ribbon Price
+const priceT = 3;  //paper Price
+const morePrice = 1;   //more Price
+const priceZ = .25;     //labor
+const pinPrice = .10; 
+const priceTax = .0975; //tax
+let isOnlinePayment = false;
 function calculatePinsAndCost() {
     const totalRosesAmount = totalRoses();
 
@@ -43,7 +44,6 @@ function calculatePinsAndCost() {
     return totalPinCost;
 }
 
-
 function totalRoses() {
     const naturalQuantityRed = parseInt(document.getElementById('naturalQuantityRed').value) || 0;
     const naturalQuantityWhite = parseInt(document.getElementById('naturalQuantityWhite').value) || 0;
@@ -61,70 +61,106 @@ function totalRoses() {
 
     return amount;
 }
-
 function calculateTotal() {
-    const naturalQuantityRed = document.getElementById('naturalQuantityRed').value || 0;
-    const naturalQuantityWhite = document.getElementById('naturalQuantityWhite').value || 0;
-    const naturalQuantityPink = document.getElementById('naturalQuantityPink').value || 0;
-    const naturalQuantityYellow = document.getElementById('naturalQuantityYellow').value || 0;
-    const naturalQuantityOrange = document.getElementById('naturalQuantityOrange').value || 0;
-    const blueQuantity = document.getElementById('blueQuantity').value || 0;
-    const paintedQuantityGlitter = document.getElementById('paintedQuantityGlitter').value || 0;
-    const paintedQuantityBluePink = document.getElementById('paintedQuantityBluePink').value || 0;
-    const paintedQuantityPurple = document.getElementById('paintedQuantityPurple').value || 0;
-    const nuveQuantity = document.getElementById('nuveQuantity').value || 0;
-    const margaritaQuantity = document.getElementById('margaritaQuantity').value || 0;
-    const sunflowerQuantity = document.getElementById('sunflowerQuantity').value || 0;
-    const astromeliaQuantity = document.getElementById('astromeliaQuantity').value || 0;
-    const smallButterflyQuantity = document.getElementById('smallButterflyQuantity').value || 0;
-    const mediumButterflyQuantity = document.getElementById('mediumButterflyQuantity').value || 0;
-    const largeButterflyQuantity = document.getElementById('largeButterflyQuantity').value || 0;
-    const smallCrownQuantity = document.getElementById('smallCrownQuantity').value || 0;
-    const mediumCrownQuantity = document.getElementById('mediumCrownQuantity').value || 0;
-    const largeCrownQuantity = document.getElementById('largeCrownQuantity').value || 0;
-    const ribbonQuantity = document.getElementById('ribbonQuantity').value || 0;
-    const paperQuantity = document.getElementById('paperQuantity').value || 0;
-    const moreQuantity = document.getElementById('moreQuantity').value || 0;
+    const nQr = document.getElementById('naturalQuantityRed').value || 0;
+    const nQw = document.getElementById('naturalQuantityWhite').value || 0;
+    const nQp = document.getElementById('naturalQuantityPink').value || 0;
+    const nQy = document.getElementById('naturalQuantityYellow').value || 0;
+    const nQo = document.getElementById('naturalQuantityOrange').value || 0;
+    const pQb = document.getElementById('blueQuantity').value || 0;
+    const pQg = document.getElementById('paintedQuantityGlitter').value || 0;
+    const pQbP = document.getElementById('paintedQuantityBluePink').value || 0;
+    const pQp = document.getElementById('paintedQuantityPurple').value || 0;
+    const fQn = document.getElementById('nuveQuantity').value || 0;
+    const fQm = document.getElementById('margaritaQuantity').value || 0;
+    const fQs = document.getElementById('sunflowerQuantity').value || 0;
+    const fQa = document.getElementById('astromeliaQuantity').value || 0;
+    const dBqS = document.getElementById('smallButterflyQuantity').value || 0;
+    const dBqM = document.getElementById('mediumButterflyQuantity').value || 0;
+    const dBqL = document.getElementById('largeButterflyQuantity').value || 0;
+    const dCqS = document.getElementById('smallCrownQuantity').value || 0;
+    const dCqM = document.getElementById('mediumCrownQuantity').value || 0;
+    const dCqL = document.getElementById('largeCrownQuantity').value || 0;
+    const dRq = document.getElementById('ribbonQuantity').value || 0;
+    const dPq = document.getElementById('paperQuantity').value || 0;
+    const mQ = document.getElementById('moreQuantity').value || 0;
 
-    const total = 
-    (naturalQuantityRed * naturalPrice) + 
-    (naturalQuantityWhite * naturalPrice) + 
-    (naturalQuantityPink * naturalPrice) + 
-    (naturalQuantityYellow * naturalPrice) + 
-    (naturalQuantityOrange * naturalPrice) + 
-    (blueQuantity * bluePrice) + 
-    (paintedQuantityGlitter * paintedPrice) + 
-    (paintedQuantityBluePink * paintedPrice) + 
-    (paintedQuantityPurple * paintedPrice) + 
-    (nuveQuantity * nuvePrice) + 
-    (margaritaQuantity * margaritaPrice) + 
-    (sunflowerQuantity * sunflowerPrice)+
-    (astromeliaQuantity * astromeliaPrice) + 
-    (smallButterflyQuantity * smallButterflyPrice) + 
-    (mediumButterflyQuantity * mediumButterflyPrice) + 
-    (largeButterflyQuantity * largeButterflyPrice) + 
-    (smallCrownQuantity * smallCrownPrice) +
-    (mediumCrownQuantity * mediumCrownPrice) + 
-    (largeCrownQuantity * largeCrownPrice) + 
-    (ribbonQuantity * ribbonPrice) + 
-    (paperQuantity * paperPrice) + 
-    (moreQuantity * morePrice);
+    const flowerTotal = 
+    (nQr * priceM) + 
+    (nQw * priceM) + 
+    (nQp * priceM) + 
+    (nQy * priceM) + 
+    (nQo * priceM) + 
+    (pQb * priceL) + 
+    (pQg * priceJ) + 
+    (pQbP * priceJ) + 
+    (pQp * priceJ) + 
+    (fQn * priceN) + 
+    (fQm * priceR) + 
+    (fQs * priceS)+
+    (fQa * priceA) + 
+    (dBqS * priceQ) + 
+    (dBqM * priceW) + 
+    (dBqL * priceV) + 
+    (dCqS * priceP) +
+    (dCqM * priceG) + 
+    (dCqL * priceD) + 
+    (dRq * priceI) + 
+    (dPq * priceT) + 
+    (mQ * morePrice);
 
     const pinFinalPrice = calculatePinsAndCost();
-    const finalTotal = pinFinalPrice + total;
-    const final = (finalTotal * priceZ) + finalTotal;
+    const afterPin = pinFinalPrice + flowerTotal;
+    const total = (afterPin * priceZ) + afterPin; 
+    let finalPrice = (total * priceTax) + total;
 
-    document.getElementById('answer').value = final.toFixed();
+    if (isOnlinePayment) {
+        finalPrice += (finalPrice * 0.029) + 0.30;
+    }
+
+    document.getElementById('answer').value = finalPrice.toFixed();
 }
-
-
 document.querySelectorAll('input[type="number"]').forEach(input => {
     input.oninput = () => {
         if(input.value.length > input.maxLength) input.value = input.value.slice(0, input.maxLength);
     };
 });
+function toggleButtonColor(button) {
+    button.classList.toggle('toggled');
+    isOnlinePayment = !isOnlinePayment; 
+    calculateTotal();
+}
+let hasPopupBeenShown = false;
+function turnOnPopup() {
+    if (!hasPopupBeenShown) {
+        document.getElementById('popup').classList.add('active');
+        hasPopupBeenShown = true; 
+    }
+}
+function turnOffPopup() {
+    document.getElementById('popup').classList.remove('active');
+    hasPopupBeenShown = false; 
+}
+function resetFormValues() {
+    const inputs = document.querySelectorAll('form input[type="number"]');
 
-
+    inputs.forEach(input => {
+        input.value = 0;
+        input.style.color = 'gray'; 
+    });
+}
+document.querySelectorAll('form input[type="number"]').forEach(input => {
+    input.addEventListener('input', function() {
+        if (this.value == 0) {
+            this.style.color ='';
+        } else {
+            this.style.color = '';
+        }
+    });
+});
+window.onload = function() {
+    turnOnPopup();
+};
 function checkOrientation() {
     const rotateMessage = document.getElementById('rotateScreen');
     const width = window.innerWidth;
@@ -136,7 +172,6 @@ function checkOrientation() {
         rotateMessage.style.display = 'none'; // Hide the rotate message
     }
 }
-
 window.addEventListener('load', checkOrientation);
 window.addEventListener('resize', checkOrientation);
 window.addEventListener('orientationchange', checkOrientation);

@@ -164,6 +164,41 @@ input[type="number"]{
 #center{
     margin-bottom: 12px;
 }
+/*--------Buttons--------------------------------------------------*/
+.onlineButton{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 22px;
+    margin-left: 3%;
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    font-weight: 500;
+    margin-top: 22px;
+    cursor: pointer; 
+    text-align: center;
+    color:#AE2C21;
+    border:2px solid #AE2C21;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.onlineButton.toggled {
+    background-color: #AE2C21;
+    color: white;
+}
+.resetButton{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    font-weight: 500;
+    margin-top: 22px;
+    cursor: pointer; 
+    text-align: center;
+    color:#AE2C21;
+    background-color: #ededed;
+    margin-left: 2%;
+}
 .calButton{
     width: 500px;
     height: 50px;
@@ -173,11 +208,56 @@ input[type="number"]{
     font-size: 22px;
     font-family: "Fira Sans Extra Condensed", sans-serif;
     font-weight: 500;
-    margin-left: 225px;
     margin-top: 22px;
     border: none;
     cursor: pointer; 
     text-align: center;
+    margin-left: 2%;
+
+}
+.popup .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.7);
+    z-index: 1;
+    display: none;
+}
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #fff;
+    width: 450px;
+    height: 220px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 101;
+}
+.popup .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    text-align: center;
+}
+.popup.active .overlay {
+    display: block;
+}
+.popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
 }
 /*----------------------------------------------------------------*/
 .smallScreen{
@@ -200,7 +280,6 @@ input[type="number"]{
     font-family: "Fira Sans Extra Condensed", sans-serif;
     font-weight: 100;
 }
-
 /*----------------------------------------------------------------*/
 footer{
     position: absolute;
@@ -322,6 +401,12 @@ footer a{
         width: 400px;
         margin-left: 200px;
     }    
+    .onlineButton{
+        margin-left: 1.75%;
+    }
+    .calButton, .resetButton{
+        margin-left: 1%;
+    }
     /*----------------------------------------------------------------*/
     .copyright{
         right: 20px;
@@ -391,7 +476,13 @@ footer a{
         width: 450px;
         margin-left: 200px;
         margin-top: 50px;
-    }    
+    }
+    .onlineButton{
+        margin-left: 2.5%;
+    }
+    .calButton, .resetButton{
+        margin-left: 2%;
+    }
 }
 #rotateScreen {
     display: none;

@@ -90,7 +90,7 @@
             </div>
             
             <div class="form2">
-                <h2>Decoration<br><p id = "sub-text">By Bunch<br>Decoración:</p></h2>
+                <h2>Decoration<br><p id = "sub-text">Decoración:</p></h2>
                 <div class="input-group">
                     <p>Nuve</p>
                     <input type="number" id="nuveQuantity" min="0" max="10" 
@@ -192,13 +192,27 @@
                 </div>
             </div>
     </form>            
-    <button class="calButton" onclick="calculateTotal()">CALCULATE MY BUCHON</button>
+
+    <div class="popup" id="popup">
+        <div class="overlay"></div>
+        <div class="content">
+            <span class="close-button" onclick="turnOffPopup()">&times;</span>
+            <h2>Popup Title</h2>
+            <p>Your popup content goes here.</p>
+        </div>
+    </div>
+    
+    <div class="buttons">
+        <button class="onlineButton" onclick="toggleButtonColor(this)">Online Payment</button>
+        <button class="calButton" onclick="calculateTotal()">CALCULATE MY BUCHON</button>
+        <button type="reset" class="resetButton" onclick="resetFormValues()">Reset</button>
+    </div>
 
     <div class="smallScreen">
         <img src = "AFLogo.png">
         <h1>Thanks for visiting our Page</h1>
         <p>This is a work in progress</p>
-        <p>Please use a desktop device to view this page properly.</p>
+        <p>Please use a desktop, ipad air or pro device to view this page properly.</p>
     </div>
 
     <div id="rotateScreen" class="rotate-screen">
