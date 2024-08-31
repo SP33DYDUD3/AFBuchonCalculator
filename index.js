@@ -148,6 +148,9 @@ function resetFormValues() {
         input.value = 0;
         input.style.color = 'gray'; 
     });
+
+    const totalInput = document.getElementById('answer');
+    totalInput.value = '0';
 }
 document.querySelectorAll('form input[type="number"]').forEach(input => {
     input.addEventListener('input', function() {

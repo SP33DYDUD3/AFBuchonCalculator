@@ -165,17 +165,19 @@ input[type="number"]{
     margin-bottom: 12px;
 }
 /*--------Buttons--------------------------------------------------*/
-.onlineButton{
-    width: 200px;
-    height: 50px;
+.onlineButton, .resetButton, .calButton{
     border-radius: 10px;
     font-size: 22px;
-    margin-left: 3%;
     font-family: "Fira Sans Extra Condensed", sans-serif;
     font-weight: 500;
     margin-top: 22px;
     cursor: pointer; 
     text-align: center;
+}
+.onlineButton{
+    width: 200px;
+    height: 50px;
+    margin-left: 3%;
     color:#AE2C21;
     border:2px solid #AE2C21;
     background-color: transparent;
@@ -188,13 +190,6 @@ input[type="number"]{
 .resetButton{
     width: 100px;
     height: 50px;
-    border-radius: 10px;
-    font-size: 22px;
-    font-family: "Fira Sans Extra Condensed", sans-serif;
-    font-weight: 500;
-    margin-top: 22px;
-    cursor: pointer; 
-    text-align: center;
     color:#AE2C21;
     background-color: #ededed;
     margin-left: 2%;
@@ -204,16 +199,8 @@ input[type="number"]{
     height: 50px;
     background-color: #ae2d21dd;
     color: white;
-    border-radius: 10px;
-    font-size: 22px;
-    font-family: "Fira Sans Extra Condensed", sans-serif;
-    font-weight: 500;
-    margin-top: 22px;
     border: none;
-    cursor: pointer; 
-    text-align: center;
     margin-left: 2%;
-
 }
 .popup .overlay {
     position: fixed;
@@ -226,6 +213,10 @@ input[type="number"]{
     display: none;
 }
 .popup .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -236,8 +227,18 @@ input[type="number"]{
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    z-index: 101;
+    z-index: 2;
 }
+#english , #spanish{
+    margin-top: 20px;
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    margin-bottom: 5px;
+    font-size: larger;
+}
+#spanish{
+    font-weight: 100;
+}
+
 .popup .close-button {
     position: absolute;
     top: 20px;
@@ -305,7 +306,7 @@ footer a{
 /*----------PHONE--------------------------------*/
 
 @media (max-width: 1024px) {
-    main, .total, form, .calButton, .copyright, footer {
+    main, .total, form, .buttons, .copyright, .popup, footer {
         display: none; 
     }
     .smallScreen{
