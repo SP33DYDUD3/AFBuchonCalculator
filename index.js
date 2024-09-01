@@ -1,44 +1,40 @@
-const priceM = 2.44; //natural Price
-const priceL = 3.12; //blue Price
-const priceJ = 3.64; //painted Price
-const priceN = 2.10; //nuve Price
-const priceR = 2.21; //margarita/pompom Price
-const priceS = 2.60; //sunflower Price
-const priceA = 1.43; //astromelia Price
-const priceQ = 1; //small Butterfly Price
-const priceW = 2; //medium BUTTERFLY Price
-const priceV = 3; //large BUTTERFLY Price
-const priceP = 5; //small Crown Price
-const priceG = 8;  //medium Crown Price
-const priceD = 10;  //large Crown Price
-const priceI = 5; //ribbon Price
-const priceT = 3;  //paper Price
-const morePrice = 1;   //more Price
-const priceZ = .25;     //labor
+const priceM = 2.44; 
+const priceL = 3.12; 
+const priceJ = 3.64; 
+const priceN = 2.10; 
+const priceR = 2.21;
+const priceS = 2.60; 
+const priceA = 1.43; 
+const priceQ = 1; 
+const priceW = 2; 
+const priceV = 3; 
+const priceP = 5; 
+const priceG = 8;  
+const priceD = 10;  
+const priceI = 5; 
+const priceT = 3; 
+const morePrice = 1;  
+const priceZ = .25;  
 const pinPrice = .10; 
-const priceTax = .0975; //tax
+const priceTax = .0975; 
 let isOnlinePayment = false;
 function calculatePinsAndCost() {
     const totalRosesAmount = totalRoses();
 
-    // Get the selected pin option
     const allPinsQuantity = document.getElementById('allPinsQuantity').value || 0;
     const halfPinsQuantity = document.getElementById('halfPinsQuantity').value || 0;
     const otherPinsQuantity = document.getElementById('otherPinsQuantity').value || 0;
 
     let selectedPins = 0;
 
-    // Calculate the number of pins based on the input values
     if (parseInt(allPinsQuantity) === 1) {
         selectedPins = totalRosesAmount;
     } else if (parseInt(halfPinsQuantity) === 1) {
         selectedPins = Math.ceil(totalRosesAmount / 2);
     } else {
-        // Assume `otherPinsQuantity` is directly entered by the user
         selectedPins = parseInt(otherPinsQuantity) || 0;
     }
 
-    // Calculate the cost of the pins
     const totalPinCost = selectedPins * pinPrice;
 
     return totalPinCost;
@@ -170,9 +166,9 @@ function checkOrientation() {
     const height = window.innerHeight;
 
     if (width >= 820 && height > width) {
-        rotateMessage.style.display = 'flex'; // Show the rotate message
+        rotateMessage.style.display = 'flex'; 
     } else {
-        rotateMessage.style.display = 'none'; // Hide the rotate message
+        rotateMessage.style.display = 'none'; 
     }
 }
 window.addEventListener('load', checkOrientation);
